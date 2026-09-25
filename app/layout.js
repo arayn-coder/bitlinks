@@ -16,6 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "bitlinks",
   description: "Generated your links",
+  icons: {
+    icon: '/bitlinks-logo.png', // looks inside the public/ folder
+    shortcut: '/bitlinks-logo.png',
+    apple: '/apple-touch-bitlinks-icon.png', // optional
+  },
 };
 
 export default function RootLayout({ children }) {
