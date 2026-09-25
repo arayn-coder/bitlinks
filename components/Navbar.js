@@ -78,6 +78,7 @@ const Navbar = () => {
                         <li>
                             <Link
                                 href={status === "authenticated" ? "/shortner" : "/login"}
+                    
                                 className="rounded-lg px-4 py-2 text-sm font-medium text-gray-300 transition hover:bg-white/10 hover:text-white"
                             >
                                 Shortner
@@ -299,7 +300,8 @@ const Navbar = () => {
                                 </Link>
 
                                 <Link
-                                    href={status === "authenticated" ? "/shortner" : "/login"}
+                                    // href={status === "authenticated" ? "/shortner" : "/login"}
+                                    href={"/login"}
                                     onClick={() => setIsOpen(false)}
                                     className="block rounded-xl px-4 py-3 text-slate-300 transition hover:bg-blue-500/10 hover:text-blue-400"
                                 >
