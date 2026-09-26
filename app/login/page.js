@@ -20,6 +20,7 @@ const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [loading, setLoading] = useState(false)
+    const [showNotice, setShowNotice] = useState(false)
 
 
     // ==========================================
@@ -33,6 +34,14 @@ const Login = () => {
         }
 
     }, [status, router])
+
+    const handleUnavailableLogin = () => {
+        setShowNotice(true)
+
+        setTimeout(() => {
+            setShowNotice(false)
+        }, 4000)
+    }
 
 
     // ==========================================
@@ -105,6 +114,86 @@ const Login = () => {
     return (
 
         <main className="min-h-screen bg-[#030712] text-white flex justify-center items-center overflow-hidden relative px-4 py-10">
+
+
+            {/* ==========================================
+    LOGIN OPTION NOTIFICATION
+========================================== */}
+
+            {showNotice && (
+                <div className="fixed right-4 top-4 z-[100] w-[calc(100%-2rem)] max-w-sm animate-[slideIn_0.3s_ease-out]">
+                    <div className="relative overflow-hidden rounded-2xl border border-blue-400/20 bg-slate-950 shadow-[0_20px_60px_rgba(0,0,0,0.55)]">
+
+                        {/* Blue glow */}
+                        <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-blue-500/15 blur-3xl" />
+
+                        <div className="relative flex gap-4 p-4">
+
+                            {/* Icon */}
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-500/10 text-blue-400">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M12 22a10 10 0 100-20 10 10 0 000 20z"
+                                    />
+                                </svg>
+                            </div>
+
+                            {/* Message */}
+                            <div className="min-w-0 flex-1">
+
+                                <h3 className="text-sm font-bold text-white">
+                                    Login options coming soon
+                                </h3>
+
+                                <p className="mt-1 text-xs leading-5 text-slate-400">
+                                    Currently, you can only sign in with GitHub.
+                                    More login options will be available in a future update.
+                                </p>
+
+                            </div>
+
+                            {/* Close */}
+                            <button
+                                onClick={() => setShowNotice(false)}
+                                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-slate-500 transition-all duration-200 hover:bg-white/10 hover:text-white"
+                                aria-label="Close notification"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-4 w-4"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M6 6l12 12M6 18L18 6"
+                                    />
+                                </svg>
+                            </button>
+
+                        </div>
+
+                        {/* Progress bar */}
+                        <div className="h-0.5 w-full bg-white/5">
+                            <div className="h-full w-full origin-left animate-[shrink_4s_linear] bg-gradient-to-r from-purple-500 to-blue-500" />
+                        </div>
+
+                    </div>
+                </div>
+            )}
+
 
 
             {/* ==========================================
@@ -566,7 +655,9 @@ const Login = () => {
                     {/* GOOGLE */}
 
                     <button
+                    onClick={handleUnavailableLogin}
                         className="
+                        
               group
               flex
               cursor-pointer
@@ -618,6 +709,7 @@ const Login = () => {
                     {/* LINKEDIN */}
 
                     <button
+                     onClick={handleUnavailableLogin}
                         className="
               group
               cursor-pointer
@@ -666,6 +758,7 @@ const Login = () => {
                     {/* TWITTER */}
 
                     <button
+                     onClick={handleUnavailableLogin}
                         className="
               group
               cursor-pointer
@@ -714,6 +807,7 @@ const Login = () => {
                     {/* FACEBOOK */}
 
                     <button
+                     onClick={handleUnavailableLogin}
                         className="
               group
               cursor-pointer
@@ -762,6 +856,7 @@ const Login = () => {
                     {/* GITHUB */}
 
                     <button
+                 
                         onClick={() => { signIn("github") }}
                         className="
               group
@@ -819,7 +914,10 @@ const Login = () => {
                     {/* APPLE */}
 
                     <button
+                        onClick={handleUnavailableLogin}
+
                         className="
+                        
               group
               cursor-pointer
               flex

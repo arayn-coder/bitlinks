@@ -17,9 +17,9 @@ export const metadata = {
   title: "bitlinks",
   description: "Generated your links",
   icons: {
-    icon: '/bitlinks-logo.png', // looks inside the public/ folder
-    shortcut: '/bitlinks-logo.png',
-    apple: '/apple-touch-bitlinks-icon.png', // optional
+    icon: '/bitlinks-icon.svg', // looks inside the public/ folder
+    shortcut: '/bitlinks-icon.svg',
+    apple: '/bitlinks-icon.svg', // optional
   },
 };
 

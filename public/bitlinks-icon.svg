@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Vibrant Blue to Purple Gradient -->
+    <linearGradient id="bitlinksGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1B63E0"/>
+      <stop offset="50%" stop-color="#3D5AFE"/>
+      <stop offset="100%" stop-color="#9C27B0"/>
+    </linearGradient>
+
+    <!-- Rounded Corner / Stroke Styling -->
+    <style>
+      .brand-shape {
+        fill: none;
+        stroke: url(#bitlinksGradient);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .brand-fill {
+        fill: url(#bitlinksGradient);
+      }
+    </style>
+  </defs>
+
+  <!-- Abstract "B" Outer Architecture -->
+  <g class="brand-shape" stroke-width="44">
+    <!-- Top-Left Corner Backbone -->
+    <path d="M 120 280 L 120 136 A 36 36 0 0 1 156 100 L 280 100" />
+    
+    <!-- Bottom-Right Loop -->
+    <path d="M 230 412 L 356 412 A 56 56 0 0 0 412 356 C 412 300 360 280 340 280" />
+  </g>
+
+  <!-- Central Interlocking Hyperlink Loop (Slanted at -45°) -->
+  <g transform="rotate(-45 256 256)">
+    <!-- Main Interlinked Pill Geometry -->
+    <rect 
+      x="126" 
+      y="208" 
+      width="260" 
+      height="96" 
+      rx="48" 
+      fill="none" 
+      stroke="url(#bitlinksGradient)" 
+      stroke-width="44" 
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    
+    <!-- Central Connection Bridge Break & Accents -->
+    <rect 
+      x="234" 
+      y="234" 
+      width="44" 
+      height="44" 
+      rx="12" 
+      fill="url(#bitlinksGradient)" 
+    />
+  </g>
+</svg>

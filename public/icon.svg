@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="none"/>
+
+  <path
+    d="M256 64
+       C150 64 64 150 64 256
+       C64 362 150 448 256 448
+       C362 448 448 362 448 256
+       C448 150 362 64 256 64Z"
+    fill="#2563EB"
+  />
+
+  <path
+    d="M218 170
+       L342 170
+       L294 256
+       L342 256
+       L194 370
+       L226 278
+       L170 278Z"
+    fill="white"
+  />
+</svg>
